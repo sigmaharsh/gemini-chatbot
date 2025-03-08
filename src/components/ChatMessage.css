@@ -1,0 +1,117 @@
+/* filepath: /home/harsh/Desktop/new-bot/gemini-chatbot/src/components/ChatMessage.css */
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* General message styling */
+.message {
+    display: flex;
+    margin-bottom: 0.8rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.user-message {
+    justify-content: flex-end;
+}
+
+.bot-message {
+    justify-content: flex-start;
+}
+
+.message-content {
+    max-width: 75%;
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    word-break: break-word;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    line-height: 1.5;
+    transition: background-color 0.3s ease;
+    background-color: #003366;
+    /* Dark blue background */
+    color: #ffffff;
+    /* White text */
+}
+
+.user-message .message-content {
+    background-color: #003366;
+    /* Dark blue background */
+    color: #ffffff;
+    /* White text */
+}
+
+.bot-message .message-content {
+    background-color: #003366;
+    /* Dark blue background */
+    color: #ffffff;
+    /* White text */
+}
+
+/* Code block styling */
+.code-block {
+    background-color: #1e1e1e;
+    /* Dark background for code blocks */
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    overflow-x: auto;
+}
+
+.code-filename {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #ffffff;
+    /* White text */
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.code-filename button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.code-filename button:hover {
+    background-color: #357ab8;
+}
+
+.code-language {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #aaaaaa;
+    /* Light grey text */
+    margin-bottom: 0.5rem;
+}
+
+pre {
+    margin: 0;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    color: #ffffff;
+    /* White text */
+}
+
+/* Text segment styling */
+.text-segment {
+    margin-bottom: 0.5rem;
+}
+
+.text-segment p {
+    margin: 0.5rem 0;
+    color: #ffffff;
+    /* White text */
+}
+
+.text-segment br {
+    display: block;
+    margin: 0.2rem 0;
+}
