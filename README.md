@@ -23,7 +23,7 @@ cd gemini-chatbot</code></pre>
   <pre><code>npm run dev</code></pre>
   <p>Or using Yarn:</p>
   <pre><code>yarn dev</code></pre>
-  <p>This will start the development server and you can view the application in your browser at <a href="http://localhost:3000">http://localhost:3000</a>.</p>
+  <p>This will start the development server and you can view the application in your browser at <a href="http://localhost:5173">http://localhost:5173</a>.</p>
 
   <h2>Project Structure</h2>
   <ul>
