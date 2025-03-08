@@ -8,7 +8,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-
+/* making this comment so that i could track changes*/
 .chat-container {
   display: flex;
   flex-direction: column;
