@@ -1,44 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gemini Chatbot</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 20px;
-      background-color: #f4f4f4;
-    }
-    h1, h2, h3 {
-      color: #333;
-    }
-    pre {
-      background: #333;
-      color: #fff;
-      padding: 10px;
-      border-radius: 5px;
-      overflow-x: auto;
-    }
-    code {
-      background: #eee;
-      padding: 2px 4px;
-      border-radius: 3px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Gemini Chatbot</h1>
-  <p>This is a Vite-based project for a chatbot application using the Gemini API.</p>
 
-  <h2>Prerequisites</h2>
-  <p>Make sure you have the following installed on your machine:</p>
-  <ul>
-    <li><a href="https://nodejs.org/">Node.js</a> (version 14 or higher)</li>
-    <li><a href="https://www.npmjs.com/">npm</a> (version 6 or higher) or <a href="https://yarnpkg.com/">Yarn</a></li>
-  </ul>
 
   <h2>Getting Started</h2>
   <p>Follow these steps to set up and run the project locally.</p>
@@ -103,4 +63,3 @@ cd gemini-chatbot</code></pre>
   <h2>License</h2>
   <p>This project is licensed under the MIT License.</p>
 </body>
-</html>
