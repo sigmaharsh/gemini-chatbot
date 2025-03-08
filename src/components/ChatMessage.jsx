@@ -1,18 +1,21 @@
-// src/components/ChatMessage.jsx - Improved with code formatting
 import React from 'react';
+import './ChatMessage.css';
 
 function ChatMessage({ message }) {
   const { role, content } = message;
-  
-  // Function to format message content with code blocks
+
+  // Function to format message content with code blocks and custom bold formatting
   const formatContent = (text) => {
     if (!text) return '';
-    
+
+    // Replace bold text with <strong>text</strong>
+    const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
     // Check if the response contains code blocks
-    if (text.includes('```')) {
+    if (formattedText.includes('```')) {
       // Split by code blocks
-      const segments = text.split(/(```(?:[\w-]+)?\n[\s\S]*?\n```)/g);
-      
+      const segments = formattedText.split(/(```(?:[\w-]+)?\n[\s\S]*?\n```)/g);
+
       return segments.map((segment, index) => {
         // Check if this segment is a code block
         if (segment.startsWith('```') && segment.endsWith('```')) {
@@ -22,12 +25,12 @@ function ChatMessage({ message }) {
           if (languageMatch && languageMatch[1]) {
             language = languageMatch[1];
           }
-          
+
           // Extract code content
           const codeContent = segment
             .replace(/```(?:[\w-]+)?\n/, '') // Remove opening ```language\n
             .replace(/\n```$/, ''); // Remove closing ```
-          
+
           return (
             <div key={index} className="code-block">
               {language !== 'text' && (
@@ -41,42 +44,18 @@ function ChatMessage({ message }) {
         } else {
           // Regular text - handle paragraphs
           return (
-            <div key={index} className="text-segment">
-              {segment.split('\n\n').map((paragraph, pIndex) => (
-                // Convert double newlines to paragraphs
-                <p key={pIndex}>
-                  {/* Convert single newlines to line breaks */}
-                  {paragraph.split('\n').map((line, lIndex, array) => (
-                    <React.Fragment key={lIndex}>
-                      {line}
-                      {lIndex < array.length - 1 && <br />}
-                    </React.Fragment>
-                  ))}
-                </p>
-              ))}
-            </div>
+            <div key={index} className="text-segment" dangerouslySetInnerHTML={{ __html: segment.replace(/\n/g, '<br />') }} />
           );
         }
       });
     }
-    
+
     // If no code blocks, just handle text formatting with paragraphs
     return (
-      <div className="text-segment">
-        {text.split('\n\n').map((paragraph, pIndex) => (
-          <p key={pIndex}>
-            {paragraph.split('\n').map((line, lIndex, array) => (
-              <React.Fragment key={lIndex}>
-                {line}
-                {lIndex < array.length - 1 && <br />}
-              </React.Fragment>
-            ))}
-          </p>
-        ))}
-      </div>
+      <div className="text-segment" dangerouslySetInnerHTML={{ __html: formattedText.replace(/\n/g, '<br />') }} />
     );
   };
-  
+
   return (
     <div className={`message ${role === 'user' ? 'user-message' : 'bot-message'}`}>
       <div className="message-content">
