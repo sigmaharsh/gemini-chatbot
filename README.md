@@ -45,21 +45,6 @@ cd gemini-chatbot</code></pre>
   <p>In the project directory, you can run:</p>
 
   <h3><code>npm run dev</code> or <code>yarn dev</code></h3>
-  <p>Runs the app in development mode. Open <a href="http://localhost:3000">http://localhost:3000</a> to view it in the browser.</p>
+  <p>Runs the app in development mode. Open <a href="http://localhost:5173">http://localhost:5173</a> to view it in the browser.</p>
 
-  <h3><code>npm run build</code> or <code>yarn build</code></h3>
-  <p>Builds the app for production to the <code>dist</code> folder.</p>
-
-  <h3><code>npm run serve</code> or <code>yarn serve</code></h3>
-  <p>Serves the production build from the <code>dist</code> folder.</p>
-
-  <h2>Dependencies</h2>
-  <ul>
-    <li><code>react</code>: JavaScript library for building user interfaces</li>
-    <li><code>react-dom</code>: Entry point to the DOM and server renderers for React</li>
-    <li><code>vite</code>: Next generation frontend tooling</li>
-  </ul>
-
-  <h2>License</h2>
-  <p>This project is licensed under the MIT License.</p>
 </body>
