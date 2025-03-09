@@ -53,7 +53,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-color: wheat;
+  background-color: rgb(140, 138, 134);
   /* Dark background */
 }
 
