@@ -10,7 +10,7 @@ function App() {
   const [error, setError] = useState(null);
   const messagesEndRef = useRef(null);
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-  
+
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
@@ -39,7 +39,7 @@ function App() {
         role: msg.role === 'user' ? 'user' : 'model',
         parts: [{ text: msg.content }]
       }));
-      
+
       // Add the new user message
       formattedHistory.push({
         role: 'user',
@@ -73,24 +73,24 @@ function App() {
   return (
     <div className="chat-container">
       <header className="chat-header">
-        <h1>Gemini AI Chatbot</h1>
+        <h1>AI Chatbot</h1>
       </header>
-      
+
       <div className="messages-container">
         {messages.length === 0 ? (
           <div className="empty-state">
-            <p>Start a conversation with Gemini AI!</p>
+            <p>Start a conversation with the AI chatbot !</p>
           </div>
         ) : (
           messages.map((message, index) => (
             <ChatMessage key={index} message={message} />
           ))
         )}
-        {isLoading && <div className="loading-message">Gemini is thinking...</div>}
+        {isLoading && <div className="loading-message"> Thinking...</div>}
         {error && <div className="error-message">{error}</div>}
         <div ref={messagesEndRef} />
       </div>
-      
+
       <form className="input-form" onSubmit={sendMessage}>
         <input
           type="text"
