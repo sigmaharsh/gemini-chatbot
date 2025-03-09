@@ -46,13 +46,12 @@ function App() {
         parts: [{ text: input }]
       });
 
-      // Increase maxOutputTokens to handle larger responses
-      // For streaming large responses
+      
       const result = await model.generateContent({
         contents: formattedHistory,
         generationConfig: {
           temperature: 0.7,
-          maxOutputTokens: 8192, // Increased from 800 to 8192 (adjust based on your needs)
+          maxOutputTokens: 8192, // Increased from 800 to 8192 now can handle larger responses
         },
       });
       
