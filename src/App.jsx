@@ -22,44 +22,46 @@ function App() {
   const sendMessage = async (e) => {
     e.preventDefault();
     if (!input.trim()) return;
-
+    
     try {
       // Add user message to state
       const userMessage = { role: 'user', content: input };
       setMessages(prev => [...prev, userMessage]);
       setIsLoading(true);
       setInput('');
-
+      
       // Set up the Gemini API
       const genAI = new GoogleGenerativeAI(apiKey);
       const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
-
+      
       // Format message history for the API
       const formattedHistory = messages.map(msg => ({
         role: msg.role === 'user' ? 'user' : 'model',
         parts: [{ text: msg.content }]
       }));
-
+      
       // Add the new user message
       formattedHistory.push({
         role: 'user',
         parts: [{ text: input }]
       });
 
-      // Generate a response
+      // Increase maxOutputTokens to handle larger responses
+      // For streaming large responses
       const result = await model.generateContent({
         contents: formattedHistory,
         generationConfig: {
           temperature: 0.7,
-          maxOutputTokens: 800,
+          maxOutputTokens: 8192, // Increased from 800 to 8192 (adjust based on your needs)
         },
       });
-
+      
       const response = result.response;
       const responseText = response.text();
-
+      
       // Add bot message to state
       setMessages(prev => [...prev, { role: 'bot', content: responseText }]);
+      
     } catch (err) {
       console.error('Error:', err);
       setError(`Error: ${err.message}`);
@@ -75,22 +77,20 @@ function App() {
       <header className="chat-header">
         <h1>AI Chatbot</h1>
       </header>
-
       <div className="messages-container">
         {messages.length === 0 ? (
           <div className="empty-state">
-            <p>Start a conversation with the AI chatbot !</p>
+            <p>Start a conversation with the AI chatbot!</p>
           </div>
         ) : (
           messages.map((message, index) => (
             <ChatMessage key={index} message={message} />
           ))
         )}
-        {isLoading && <div className="loading-message"> Thinking...</div>}
+        {isLoading && <div className="loading-message">Thinking...</div>}
         {error && <div className="error-message">{error}</div>}
         <div ref={messagesEndRef} />
       </div>
-
       <form className="input-form" onSubmit={sendMessage}>
         <input
           type="text"
