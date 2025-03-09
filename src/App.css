@@ -53,7 +53,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-color: #1e1e1e;
+  background-color: wheat;
   /* Dark background */
 }
 
@@ -96,14 +96,14 @@ body {
 }
 
 .user-message .message-content {
-  background-color: #003366;
+  background-color: hsl(210, 100%, 12%);
   /* Dark blue background */
   color: #ffffff;
   /* White text */
 }
 
 .bot-message .message-content {
-  background-color: #003366;
+  background-color: #110025;
   /* Dark blue background */
   color: #ffffff;
   /* White text */
@@ -111,7 +111,7 @@ body {
 
 .loading-message {
   align-self: center;
-  color: black;
+  color: whitesmoke;
   font-style: italic;
   animation: pulse 1.5s infinite;
   padding: 0.5rem 1rem;
