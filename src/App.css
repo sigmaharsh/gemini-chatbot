@@ -24,9 +24,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-.chat-container:hover {
-  transform: scale(1.01);
-}
+
 
 .chat-header {
   padding: 1.5rem;
