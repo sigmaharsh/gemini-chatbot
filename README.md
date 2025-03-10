@@ -38,8 +38,7 @@ cd gemini-chatbot</code></pre>
         <li><code>App.css</code>: Main stylesheet for the application</li>
       </ul>
     </li>
-    <li><code>.env.local</code>: Environment variables file (not included in the repository) please obtain the gemini api key <a href="https://aistudio.google.com/apikey">Google AI studio</a> and paste this inside .env.local folder <pre><code> VITE_GEMINI_API_KEY= your-api-key</code></pre></li>
-
+    <li><code>.env.local</code>: Environment variables file (not included in the repository)</li>
   </ul>
 
   <h2>Available Scripts</h2>
